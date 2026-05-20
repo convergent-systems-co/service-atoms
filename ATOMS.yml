@@ -1,0 +1,38 @@
+      # ATOMS.yml — catalog manifest for service-atoms
+      #
+      # See https://github.com/convergent-systems-co/atoms-spec for the canonical schema this conforms to.
+
+      name: service-atoms
+      version: 0.1.0
+      spec: atoms-spec/v1
+      domain: service-atoms.com
+      ecosystem:
+        federation: xdao.co
+        redirect: service.xdao.co
+
+      purpose: |
+        Replaces DNS for services inside the ecosystem while remaining decentralized at the implementation layer — identity, protocol, schema, policy, and endpoint primitives composed into typed services.
+
+      atomTypes:
+        - identity
+- protocol
+- schema
+- policy
+- endpoint-pattern
+
+      compositionType: services
+      compositionDir: services
+
+      ruleTypes:
+        - version-compatibility
+- auth-required
+- schema-evolution
+
+      runtimeConsumers:
+        - universal-bus
+- aish
+
+      license: Apache-2.0
+      maintainers:
+        - name: Convergent Systems
+          contact: maintainers@xdao.co

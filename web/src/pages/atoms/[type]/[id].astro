@@ -1,0 +1,93 @@
+---
+import Base from "../../../layouts/Base.astro";
+import catalog from "../../../../public/exports/catalog.json";
+
+export function getStaticPaths() {
+  return catalog.atoms.map((atom: any) => ({
+    params: { type: atom.type, id: atom.id },
+    props: { atom },
+  }));
+}
+
+const { atom } = Astro.props;
+
+// Pick the type-specific payload
+const identity = atom.identity;
+const protocol = atom.protocol;
+const schema = atom.schema;
+const policy = atom.policy;
+const endpointPattern = atom.endpoint_pattern;
+---
+<Base title={atom.name} description={atom.description ?? `${atom.type} atom`}>
+  <p><a href="/atoms/">← All atoms</a></p>
+  <h1>{atom.name}</h1>
+  <p style="color: var(--muted);">
+    <code>{atom.type}</code> · <code>v{atom.version}</code>
+  </p>
+
+  {atom.description && <p>{atom.description}</p>}
+
+  {atom.tags && atom.tags.length > 0 && (
+    <p>
+      Tags: {atom.tags.map((tag: string) => (
+        <span style="display: inline-block; font-size: 0.875rem; background: #f4ece4; padding: 0.125rem 0.5rem; border-radius: 0.25rem; margin-right: 0.25rem;">{tag}</span>
+      ))}
+    </p>
+  )}
+
+  {identity && (
+    <section>
+      <h2>Identity</h2>
+      <dl style="display: grid; grid-template-columns: max-content 1fr; gap: 0.5rem 1rem;">
+        {identity.scheme && (<><dt>Scheme</dt><dd><code>{identity.scheme}</code></dd></>)}
+        {identity.issuer && (<><dt>Issuer</dt><dd><code>{identity.issuer}</code></dd></>)}
+        {identity.subject_format && (<><dt>Subject format</dt><dd><code>{identity.subject_format}</code></dd></>)}
+      </dl>
+    </section>
+  )}
+
+  {protocol && (
+    <section>
+      <h2>Protocol</h2>
+      <dl style="display: grid; grid-template-columns: max-content 1fr; gap: 0.5rem 1rem;">
+        {protocol.transport && (<><dt>Transport</dt><dd><code>{protocol.transport}</code></dd></>)}
+        {protocol.version && (<><dt>Version</dt><dd><code>{protocol.version}</code></dd></>)}
+        {protocol.encoding && (<><dt>Encoding</dt><dd><code>{protocol.encoding}</code></dd></>)}
+      </dl>
+    </section>
+  )}
+
+  {schema && (
+    <section>
+      <h2>Schema</h2>
+      <dl style="display: grid; grid-template-columns: max-content 1fr; gap: 0.5rem 1rem;">
+        {schema.format && (<><dt>Format</dt><dd><code>{schema.format}</code></dd></>)}
+        {schema.registry && (<><dt>Registry</dt><dd><code>{schema.registry}</code></dd></>)}
+      </dl>
+    </section>
+  )}
+
+  {policy && (
+    <section>
+      <h2>Policy</h2>
+      <dl style="display: grid; grid-template-columns: max-content 1fr; gap: 0.5rem 1rem;">
+        {policy.effect && (<><dt>Effect</dt><dd><code>{policy.effect}</code></dd></>)}
+        {policy.conditions && policy.conditions.length > 0 && (<><dt>Conditions</dt><dd>{policy.conditions.map((c: string) => <code style="margin-right: 0.25rem;">{c}</code>)}</dd></>)}
+      </dl>
+    </section>
+  )}
+
+  {endpointPattern && (
+    <section>
+      <h2>Endpoint pattern</h2>
+      <dl style="display: grid; grid-template-columns: max-content 1fr; gap: 0.5rem 1rem;">
+        {endpointPattern.pattern && (<><dt>Pattern</dt><dd><code>{endpointPattern.pattern}</code></dd></>)}
+        {endpointPattern.method && (<><dt>Method</dt><dd><code>{endpointPattern.method}</code></dd></>)}
+        {endpointPattern.auth && (<><dt>Auth</dt><dd><code>{endpointPattern.auth}</code></dd></>)}
+      </dl>
+    </section>
+  )}
+
+  <h2>Raw atom</h2>
+  <p><a href={`/atoms/${atom.type}/${atom.id}.json`}>/atoms/{atom.type}/{atom.id}.json</a> · <a href="/schemas/atom-v1.json">schema</a></p>
+</Base>

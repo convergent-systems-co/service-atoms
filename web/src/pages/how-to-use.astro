@@ -1,0 +1,36 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base title="How to use" description="How to consume service-atoms in your application.">
+  <h1>How to use service-atoms</h1>
+
+  <h2>Read the catalog over HTTPS</h2>
+  <p>Every artifact is served under stable URLs with correct content-types:</p>
+  <pre><code>curl https://service-atoms.com/exports/catalog.json
+curl https://service-atoms.com/atoms/identity/oauth2-bearer.json
+curl https://service-atoms.com/services/universal-bus-gateway.json
+curl https://service-atoms.com/schemas/composition-v1.json</code></pre>
+
+  <h2>Resolve a service composition</h2>
+  <p>A service composition lists references to atoms by URI and version. To instantiate the service,
+  fetch each referenced atom and assemble: identity → protocol → schema → policy → endpoint patterns.</p>
+
+  <pre><code>{`// pseudo-code
+const composition = await fetch("/services/universal-bus-gateway.json").then(r => r.json());
+const refs = composition.references;
+const identity = await fetch(uriToUrl(refs.identity.ref)).then(r => r.json());
+const protocol = await fetch(uriToUrl(refs.protocol.ref)).then(r => r.json());
+const schema = await fetch(uriToUrl(refs.schema.ref)).then(r => r.json());
+const policy = await Promise.all((refs.policy ?? []).map(r => fetch(uriToUrl(r.ref)).then(r => r.json())));
+const service = compileService({ identity, protocol, schema, policy });`}</code></pre>
+
+  <h2>Compatibility rules</h2>
+  <p>Rules in <a href="/exports/catalog.json"><code>/exports/catalog.json</code></a> (under the <code>rules</code>
+  key) declare predicates over atoms. Example: a <code>version-compatibility</code> rule constrains which
+  protocol versions may pair with which schema versions. A composition that violates a <code>require</code>-effect
+  rule is malformed.</p>
+
+  <h2>Cross-platform portability</h2>
+  <p>v0.1 ships the catalog and its JSON Schema; adapters for universal-bus and aish that translate
+  service-atoms into platform-native service registrations are v0.2 work.</p>
+</Base>

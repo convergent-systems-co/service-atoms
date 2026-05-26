@@ -1,7 +1,7 @@
 {
   "catalog": "service-atoms",
   "version": "0.1.0",
-  "built_at": "2026-05-26T00:00:00+00:00",
+  "built_at": "2026-05-26T15:49:19+00:00",
   "atoms": [
     {
       "schema": "https://service-atoms.com/schemas/atom-v1.json",
@@ -13,8 +13,15 @@
       "service_type": "api",
       "base_url": "https://api.cloudflare.com/client/v4/accounts/{account_id}/pages",
       "protocol": "https",
-      "auth_schemes": ["bearer"],
-      "tags": ["cloudflare", "pages", "deploy", "cdn"],
+      "auth_schemes": [
+        "bearer"
+      ],
+      "tags": [
+        "cloudflare",
+        "pages",
+        "deploy",
+        "cdn"
+      ],
       "status": "active"
     },
     {
@@ -27,8 +34,16 @@
       "service_type": "api",
       "base_url": "https://e1fe0f0ce8ff18da4edc118372c30022.r2.cloudflarestorage.com",
       "protocol": "https",
-      "auth_schemes": ["aws-sigv4"],
-      "tags": ["cloudflare", "r2", "s3", "object-storage", "terraform-backend"],
+      "auth_schemes": [
+        "aws-sigv4"
+      ],
+      "tags": [
+        "cloudflare",
+        "r2",
+        "s3",
+        "object-storage",
+        "terraform-backend"
+      ],
       "status": "active"
     },
     {
@@ -41,9 +56,17 @@
       "service_type": "api",
       "base_url": "https://api.github.com",
       "protocol": "https",
-      "auth_schemes": ["bearer", "oauth2"],
+      "auth_schemes": [
+        "bearer",
+        "oauth2"
+      ],
       "openapi_ref": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json",
-      "tags": ["github", "vcs", "ci-cd", "issues"],
+      "tags": [
+        "github",
+        "vcs",
+        "ci-cd",
+        "issues"
+      ],
       "status": "active"
     }
   ],

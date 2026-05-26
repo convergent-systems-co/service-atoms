@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://service-atoms.com/schemas/composition-v1.json",
+  "title": "service-atoms v1 composition",
+  "description": "A service catalog composition assembles identity atoms, protocols, policies, and endpoint patterns into a named service entry.",
+  "type": "object",
+  "required": ["schema", "type", "id", "version", "name", "references"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "https://service-atoms.com/schemas/composition-v1.json"
+    },
+    "type": { "type": "string", "const": "service" },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,62}[a-z0-9]$" },
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[A-Za-z0-9.-]+)?$" },
+    "name": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "description": { "type": "string", "maxLength": 500 },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 40 },
+      "uniqueItems": true
+    },
+    "references": {
+      "type": "object",
+      "required": ["identity"],
+      "additionalProperties": false,
+      "properties": {
+        "identity":   { "$ref": "#/$defs/ref" },
+        "protocols":  { "type": "array", "items": { "$ref": "#/$defs/ref" }, "uniqueItems": true },
+        "policies":   { "type": "array", "items": { "$ref": "#/$defs/ref" }, "uniqueItems": true },
+        "endpoints":  { "type": "array", "items": { "$ref": "#/$defs/ref" }, "uniqueItems": true }
+      }
+    }
+  },
+  "$defs": {
+    "ref": {
+      "type": "object",
+      "required": ["ref", "version"],
+      "additionalProperties": false,
+      "properties": {
+        "ref":     { "type": "string", "pattern": "^service-atoms://atoms/[a-z-]+/[a-z0-9-]+$" },
+        "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[A-Za-z0-9.-]+)?$" }
+      }
+    }
+  }
+}

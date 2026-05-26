@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/cloudflare-r2-api",
+  "version": "1.0.0",
+  "name": "Cloudflare R2 Storage API",
+  "description": "Cloudflare R2 object storage (S3-compatible). Used as Terraform remote state backend for all *-atoms infrastructure.",
+  "service_type": "api",
+  "base_url": "https://e1fe0f0ce8ff18da4edc118372c30022.r2.cloudflarestorage.com",
+  "protocol": "https",
+  "auth_schemes": ["aws-sigv4"],
+  "tags": ["cloudflare", "r2", "s3", "object-storage", "terraform-backend"],
+  "status": "active"
+}

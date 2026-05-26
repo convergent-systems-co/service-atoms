@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/cloudflare-pages-api",
+  "version": "1.0.0",
+  "name": "Cloudflare Pages API",
+  "description": "Cloudflare Pages REST API for deploying static sites. Used by all *-atoms catalog deploy workflows.",
+  "service_type": "api",
+  "base_url": "https://api.cloudflare.com/client/v4/accounts/{account_id}/pages",
+  "protocol": "https",
+  "auth_schemes": ["bearer"],
+  "tags": ["cloudflare", "pages", "deploy", "cdn"],
+  "status": "active"
+}

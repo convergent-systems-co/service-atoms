@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/pypi-api",
+  "version": "1.0.0",
+  "name": "PyPI Python Package Index",
+  "description": "Python Package Index (PyPI) for publishing and installing Python packages. Accessed via pip and Twine for distribution.",
+  "service_type": "api",
+  "base_url": "https://pypi.org",
+  "protocol": "https",
+  "auth_schemes": ["api-key"],
+  "tags": ["pypi", "python", "package-registry", "publish"],
+  "status": "active"
+}

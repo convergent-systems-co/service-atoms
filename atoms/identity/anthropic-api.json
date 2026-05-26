@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/anthropic-api",
+  "version": "1.0.0",
+  "name": "Anthropic Claude API",
+  "description": "Anthropic Claude API for chat completions, tool use, and vision. Powers AI capabilities in aish and Olympus agent workflows.",
+  "service_type": "api",
+  "base_url": "https://api.anthropic.com/v1",
+  "protocol": "https",
+  "auth_schemes": ["api-key"],
+  "tags": ["anthropic", "claude", "ai", "llm", "tool-use"],
+  "status": "active"
+}

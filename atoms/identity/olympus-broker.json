@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/olympus-broker",
+  "version": "1.0.0",
+  "name": "Olympus Policy Broker",
+  "description": "Olympus intent validation and policy broker. Validates agent actions against governance rules and tracks drachma accounting for AI resource usage.",
+  "service_type": "api",
+  "base_url": "http://localhost:8080",
+  "protocol": "http",
+  "auth_schemes": ["bearer"],
+  "tags": ["olympus", "policy", "governance", "intent", "drachma"],
+  "status": "active"
+}

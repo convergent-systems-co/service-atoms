@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/github-packages",
+  "version": "1.0.0",
+  "name": "GitHub Container and Package Registry",
+  "description": "GitHub Packages and Container Registry (ghcr.io) for publishing Docker images and npm/Maven/NuGet packages scoped to the convergent-systems-co org.",
+  "service_type": "api",
+  "base_url": "https://ghcr.io",
+  "protocol": "https",
+  "auth_schemes": ["bearer"],
+  "tags": ["github", "container-registry", "packages", "docker", "ghcr"],
+  "status": "active"
+}

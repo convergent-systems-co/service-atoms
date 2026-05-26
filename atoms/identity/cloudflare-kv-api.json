@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/cloudflare-kv-api",
+  "version": "1.0.0",
+  "name": "Cloudflare Workers KV API",
+  "description": "Cloudflare Workers KV REST API for managing global key-value namespaces used for caching and configuration in Worker scripts.",
+  "service_type": "api",
+  "base_url": "https://api.cloudflare.com/client/v4/accounts/{account_id}/storage/kv/namespaces",
+  "protocol": "https",
+  "auth_schemes": ["bearer"],
+  "tags": ["cloudflare", "kv", "key-value", "workers", "storage"],
+  "status": "active"
+}

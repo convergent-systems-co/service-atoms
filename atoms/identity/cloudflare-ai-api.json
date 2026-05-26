@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/cloudflare-ai-api",
+  "version": "1.0.0",
+  "name": "Cloudflare Workers AI API",
+  "description": "Cloudflare Workers AI REST API for running LLM inference and embedding models at the edge without GPU provisioning.",
+  "service_type": "api",
+  "base_url": "https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/run",
+  "protocol": "https",
+  "auth_schemes": ["bearer"],
+  "tags": ["cloudflare", "ai", "llm", "edge", "inference"],
+  "status": "active"
+}

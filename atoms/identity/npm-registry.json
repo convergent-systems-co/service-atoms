@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/npm-registry",
+  "version": "1.0.0",
+  "name": "npm Package Registry",
+  "description": "npm public package registry for publishing and installing JavaScript/TypeScript packages, including scoped packages under the @convergent-systems scope.",
+  "service_type": "api",
+  "base_url": "https://registry.npmjs.org",
+  "protocol": "https",
+  "auth_schemes": ["bearer"],
+  "tags": ["npm", "package-registry", "javascript", "typescript", "publish"],
+  "status": "active"
+}

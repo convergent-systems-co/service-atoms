@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/terraform-cloud-api",
+  "version": "1.0.0",
+  "name": "HashiCorp Terraform Cloud API",
+  "description": "HashiCorp Terraform Cloud REST API for managing runs, workspaces, and remote state. Supports OpenTofu-compatible workflows.",
+  "service_type": "api",
+  "base_url": "https://app.terraform.io/api/v2",
+  "protocol": "https",
+  "auth_schemes": ["bearer"],
+  "tags": ["terraform", "infrastructure", "state", "workspace", "iac"],
+  "status": "active"
+}

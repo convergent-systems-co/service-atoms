@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/cloudflare-pages-functions",
+  "version": "1.0.0",
+  "name": "Cloudflare Pages Functions",
+  "description": "Cloudflare Pages Functions serverless runtime for co-locating API endpoints with static sites. Functions live in the /functions directory of a Pages project.",
+  "service_type": "api",
+  "base_url": "https://api.cloudflare.com/client/v4/accounts/{account_id}/pages/projects/{project}/functions",
+  "protocol": "https",
+  "auth_schemes": ["bearer"],
+  "tags": ["cloudflare", "pages", "functions", "serverless", "edge"],
+  "status": "active"
+}

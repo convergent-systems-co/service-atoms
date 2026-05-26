@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/aish-daemon",
+  "version": "1.0.0",
+  "name": "aish AI Shell Daemon",
+  "description": "aish AI shell daemon providing session management, persona binding, and tool-use coordination for the Polliard AI shell environment.",
+  "service_type": "rpc",
+  "base_url": "unix:///var/run/aish.sock",
+  "protocol": "unix",
+  "auth_schemes": ["local"],
+  "tags": ["aish", "shell", "daemon", "persona", "session"],
+  "status": "active"
+}

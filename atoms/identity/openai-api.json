@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/openai-api",
+  "version": "1.0.0",
+  "name": "OpenAI API",
+  "description": "OpenAI API for GPT model completions, embeddings, and fine-tuning. Used as a secondary LLM provider in agent pipelines.",
+  "service_type": "api",
+  "base_url": "https://api.openai.com/v1",
+  "protocol": "https",
+  "auth_schemes": ["bearer"],
+  "tags": ["openai", "gpt", "ai", "llm", "embeddings"],
+  "status": "active"
+}

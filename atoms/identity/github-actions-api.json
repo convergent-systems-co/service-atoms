@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/github-actions-api",
+  "version": "1.0.0",
+  "name": "GitHub Actions REST API",
+  "description": "GitHub Actions REST API for programmatically triggering workflow runs, listing artifacts, and querying run status across all *-atoms repos.",
+  "service_type": "api",
+  "base_url": "https://api.github.com/repos/{owner}/{repo}/actions",
+  "protocol": "https",
+  "auth_schemes": ["bearer"],
+  "tags": ["github", "actions", "ci-cd", "workflows", "automation"],
+  "status": "active"
+}

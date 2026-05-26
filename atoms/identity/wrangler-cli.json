@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/wrangler-cli",
+  "version": "1.0.0",
+  "name": "Wrangler CLI",
+  "description": "Cloudflare Wrangler CLI for deploying Workers and Pages projects, running local dev servers, and tailing live logs. Primary deployment surface for all *-atoms catalog sites.",
+  "service_type": "cli",
+  "base_url": "https://registry.npmjs.org/wrangler",
+  "protocol": "https",
+  "auth_schemes": ["oauth2"],
+  "tags": ["cloudflare", "wrangler", "cli", "deploy", "workers", "pages"],
+  "status": "active"
+}

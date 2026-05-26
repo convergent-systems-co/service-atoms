@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/cloudflare-workers-api",
+  "version": "1.0.0",
+  "name": "Cloudflare Workers API",
+  "description": "Cloudflare Workers REST API for deploying and managing serverless Worker scripts at the edge.",
+  "service_type": "api",
+  "base_url": "https://api.cloudflare.com/client/v4/accounts/{account_id}/workers",
+  "protocol": "https",
+  "auth_schemes": ["bearer"],
+  "tags": ["cloudflare", "workers", "serverless", "edge", "deploy"],
+  "status": "active"
+}

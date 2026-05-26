@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/cloudflare-d1-api",
+  "version": "1.0.0",
+  "name": "Cloudflare D1 SQLite API",
+  "description": "Cloudflare D1 serverless SQLite API for managing edge-native relational databases attached to Workers and Pages Functions.",
+  "service_type": "api",
+  "base_url": "https://api.cloudflare.com/client/v4/accounts/{account_id}/d1/database",
+  "protocol": "https",
+  "auth_schemes": ["bearer"],
+  "tags": ["cloudflare", "d1", "sqlite", "database", "serverless", "edge"],
+  "status": "active"
+}

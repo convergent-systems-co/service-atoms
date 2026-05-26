@@ -1,0 +1,14 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/cloudflare-dns-api",
+  "version": "1.0.0",
+  "name": "Cloudflare DNS Management API",
+  "description": "Cloudflare DNS zone management API for creating and updating A, CNAME, TXT, and MX records. Used for all *-atoms.com domain routing.",
+  "service_type": "api",
+  "base_url": "https://api.cloudflare.com/client/v4/zones/{zone_id}/dns_records",
+  "protocol": "https",
+  "auth_schemes": ["bearer"],
+  "tags": ["cloudflare", "dns", "zones", "cname", "routing"],
+  "status": "active"
+}

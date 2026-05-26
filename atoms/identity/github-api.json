@@ -1,0 +1,15 @@
+{
+  "schema": "https://service-atoms.com/schemas/atom-v1.json",
+  "type": "identity",
+  "id": "service-atoms/identity/github-api",
+  "version": "1.0.0",
+  "name": "GitHub REST API v3",
+  "description": "GitHub REST API for repository management, issues, PRs, and Actions. Core service for the convergent-systems-co ecosystem CI/CD.",
+  "service_type": "api",
+  "base_url": "https://api.github.com",
+  "protocol": "https",
+  "auth_schemes": ["bearer", "oauth2"],
+  "openapi_ref": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json",
+  "tags": ["github", "vcs", "ci-cd", "issues"],
+  "status": "active"
+}

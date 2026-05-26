@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://service-atoms.com/schemas/atom-v1.json",
+  "title": "service-atoms v1 atom",
+  "description": "A single atom in the service-atoms catalog. Discriminated by `type`. Captures the identity, protocol shape, auth, and access patterns for a named service.",
+  "type": "object",
+  "required": ["schema", "type", "id", "version", "name"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "https://service-atoms.com/schemas/atom-v1.json"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["identity", "protocol", "schema", "policy", "endpoint-pattern"]
+    },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9/-]{1,126}[a-z0-9]$" },
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[A-Za-z0-9.-]+)?$" },
+    "name": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "description": { "type": "string", "maxLength": 500 },
+    "service_type": {
+      "type": "string",
+      "enum": ["api", "rpc", "event-stream", "webhook", "mcp-server", "cli"]
+    },
+    "base_url": { "type": "string" },
+    "protocol": {
+      "type": "string",
+      "enum": ["https", "grpc", "websocket", "tcp", "mqtt"]
+    },
+    "auth_schemes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "openapi_ref": { "type": "string" },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 40 },
+      "uniqueItems": true
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "deprecated", "experimental"]
+    }
+  }
+}

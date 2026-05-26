@@ -8,7 +8,7 @@ const counts = {
   rules: catalog.rules.length,
 };
 const byType: Record<string, number> = {};
-for (const a of catalog.atoms) byType[a.type] = (byType[a.type] ?? 0) + 1;
+for (const a of (catalog.atoms as Array<{type: string}>)) byType[a.type] = (byType[a.type] ?? 0) + 1;
 ---
 
 <!doctype html>
